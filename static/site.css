@@ -2,12 +2,19 @@ body {
   background: #355267;
   font-family: 'Droid Sans', sans-serif;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 200%;
   color: #fff; 
   position: relative;
   min-height: 100%;
   top: 0px;
   margin: 0;
+}
+
+footer {
+  text-align: center;
+  vertical-align: bottom;
+  margin-top: 20px;
+  border-top: 2px dashed #f04949;
 }
 
 input[type=submit]:hover, button:hover {
@@ -88,3 +95,12 @@ a:hover {
 .picture img {
   text-align: center;
 }
+
+@media only screen 
+and (min-width : 1824px) {
+  .form {
+    max-width: 70%;
+    display: inline-block;
+  }
+}
+
