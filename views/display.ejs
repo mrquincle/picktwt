@@ -18,11 +18,15 @@
 
 		<h2>Image</h2>
 		<p>It will show the picture:</p>
-		<p><img src="<%= query.image_url %>" alt="<%= query.image_alt %>"></img></p>
+		<div class="picture">
+			<img src="<%= query.image_url %>" alt="<%= query.image_alt %>"></img>
 
-		<h3><%= query.title %></h3>
-		<p><%= query.description %>
-		</p>
+			<div class="caption">
+				<h3><%= query.title %></h3>
+				<p><%= query.description %>
+				</p>
+			</div>
+		</div>
 	</div>
 	<script language="javascript">
 		let copy_button = document.getElementById('copy_button'); 
