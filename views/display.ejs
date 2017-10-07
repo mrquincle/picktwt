@@ -46,7 +46,7 @@
 			copy_button.innerHTML = 'Copied to clipboard';
 		}
 		copy_button.addEventListener('copy', function (e) {
-			let text = document.getElementById('clipboard0').innerHTML; 
+			let text = encodeURI(document.getElementById('clipboard0').innerHTML);
 			e.preventDefault();
 			if (e.clipboardData) {
 				e.clipboardData.setData('text/plain', text);
