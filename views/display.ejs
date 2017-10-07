@@ -5,22 +5,44 @@
 	<link href="/static/site.css" rel="stylesheet">
 	<title>Display social card url to be used on Twitter or Facebook</title>
 <body>
-	<h1>Url to be used on Twitter or Facebook</h1>
-	
-	<p>https://picktwt.herokuapp.com/query?url=<%= query.url %>&image_url=<%= query.image_url %>&title=<%= query.title %>&image_alt=<%= query.image_alt %>&description=<%= query.description %></p>
+	<div class="navbar"></div>
+	<div class="container centered">
+		<h1>Url to be used on Twitter or Facebook</h1>
 
-	<h2>Target</h2>
-	<p>It will automatically redirect to <a href="<%= query.url %>"><%= query.url %></a></p>
+		<p id='clipboard0'>https://picktwt.herokuapp.com/query?url=<%= query.url %>&image_url=<%= query.image_url %>&title=<%= query.title %>&image_alt=<%= query.image_alt %>&description=<%= query.description %></p>
 
-	<h2>Image</h2>
-	<p>It will show the picture:</p>
-	<p><img src="<%= query.image_url %>" alt="<%= query.image_alt %>"></img></p>
+		<button type="button" id='copy_button'>Copy to clipboard</button>
 
-	<h2>Caption</h2>
-	<p>It will have some caption like</p>
-	<div class="example">
-	<h3><%= query.title %></h3>
-	<p><%= query.description %>
-	</p>
+		<h2>Target</h2>
+		<p>It will automatically redirect to <a href="<%= query.url %>"><%= query.url %></a>.</p>
+
+		<h2>Image</h2>
+		<p>It will show the picture:</p>
+		<p><img src="<%= query.image_url %>" alt="<%= query.image_alt %>"></img></p>
+
+		<h3><%= query.title %></h3>
+		<p><%= query.description %>
+		</p>
 	</div>
+	<script language="javascript">
+		let copy_button = document.getElementById('copy_button'); 
+
+		copy_button.onclick = function () {
+			console.log("Clicked button");
+			document.execCommand('copy');
+			if (!copy_button.classList.contains('clicked')) {
+				copy_button.classList.add('clicked');
+			};
+			copy_button.innerHTML = 'Copied to clipboard';
+		}
+		copy_button.addEventListener('copy', function (e) {
+			let text = document.getElementById('clipboard0').innerHTML; 
+			e.preventDefault();
+			if (e.clipboardData) {
+				e.clipboardData.setData('text/plain', text);
+			} else if (window.clipboardData) {
+				window.clipboardData.setData('Text', text);
+			}
+		});
+	</script>
 

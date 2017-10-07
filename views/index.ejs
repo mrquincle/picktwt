@@ -2,25 +2,29 @@
 <html>
 	<meta charset="UTF-8">
 <head>
+	<link href="/static/site.css" rel="stylesheet">
 	<title>Add social card info to an url</title>
 <body>
-	<h1>Add social card info to an url</h1>
+	<div class="navbar"></div>
+	<div class="container centered">
+		<h1>Add social card info to an url</h1>
 
-	<form action="/display" method="get">
-	<p>
-	<input type="text" name="url" class="form-control" id="url" placeholder="http://annevanrossum.com" value="http://annevanrossum.com">
-	</p>
-	<p>
-	<input type="text" name="image_url" class="form-control" id="image_url" placeholder="http://cdn.freshome.com/wp-content/uploads/2012/10/The-Neighbors-Have-Better-S.jpg" value="http://cdn.freshome.com/wp-content/uploads/2012/10/The-Neighbors-Have-Better-S.jpg" >
-	</p>
-	<p>
-	<input type="text" name="title" class="form-control" id="title" placeholder="Image title" value="Image title">
-	</p>
-	<p>
-	<input type="text" name="image_alt" class="form-control" id="image_alt" placeholder="Image alternative text" value="Image alternative text">
-	</p>
-	<p>
-	<input type="text" name="description" class="form-control" id="description" placeholder="Image description" value="Image description">
-	</p>
-	<input type="submit" value="Submit">
-	</form>
+		<form action="/display" method="get">
+			<p>
+			<input type="text" name="url" class="form-control" id="url" placeholder="http://annevanrossum.com" value="http://annevanrossum.com">
+			</p>
+			<p>
+			<input type="text" name="image_url" class="form-control" id="image_url" placeholder="http://cdn.freshome.com/wp-content/uploads/2012/10/The-Neighbors-Have-Better-S.jpg" value="http://cdn.freshome.com/wp-content/uploads/2012/10/The-Neighbors-Have-Better-S.jpg" >
+			</p>
+			<p>
+			<input type="text" name="title" class="form-control" id="title" placeholder="Image title" value="Image title">
+			</p>
+			<p>
+			<input type="text" name="image_alt" class="form-control" id="image_alt" placeholder="Image alternative text" value="Image alternative text">
+			</p>
+			<p>
+			<input type="text" name="description" class="form-control" id="description" placeholder="Image description" value="Image description">
+			</p>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
