@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+	<meta charset="UTF-8">
+<head>
+	<link href="/static/site.css" rel="stylesheet">
+	<title>Display social card url to be used on Twitter or Facebook</title>
+<body>
+	<h1>Url to be used on Twitter or Facebook</h1>
+	
+	<p>https://picktwt.herokuapp.com/query?url=<%= query.url %>&image_url=<%= query.image_url %>&title=<%= query.title %>&image_alt=<%= query.image_alt %>&description=<%= query.description %></p>
+
+	<h2>Target</h2>
+	<p>It will automatically redirect to <a href="<%= query.url %>"><%= query.url %></a></p>
+
+	<h2>Image</h2>
+	<p>It will show the picture:</p>
+	<p><img src="<%= query.image_url %>" alt="<%= query.image_alt %>"></img></p>
+
+	<h2>Caption</h2>
+	<p>It will have some caption like</p>
+	<div class="example">
+	<h3><%= query.title %></h3>
+	<p><%= query.description %>
+	</p>
+	</div>
+

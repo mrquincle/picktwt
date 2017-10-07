@@ -1,0 +1,12 @@
+.example {
+  text-indent: 50px;
+}
+
+body {
+  background: #355267;
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #fff; 
+}
+
