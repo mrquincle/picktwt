@@ -2,6 +2,7 @@ var express = require('express'),
 	http = require('http'),
 	path = require('path');
 var app = express();
+var port = process.env.PORT || 4000;
 
 app.set('view engine', 'ejs');
 
@@ -11,4 +12,4 @@ app.get('/query', function(req, res) {
     res.render('index.ejs', { query: req.query });
 });
 
-app.listen(4000);
+app.listen(port);
