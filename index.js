@@ -17,6 +17,12 @@ app.get('/query', function(req, res) {
 app.get('/display', function(req, res) {
     console.log("Show URL that can be used");
     console.log(req.query);
+    let text = "https://picktwt.herokuapp.com/query?url=" + req.query.url + 
+	'&image_url=' + req.query.image_url + 
+	'&title=' + req.query.title + 
+	'&image_alt=' + req.query.image_alt +
+	'&description=' + req.query.description;
+    req.query.link = encodeURI(text); 
     res.render('display.ejs', { query: req.query });
 });
 

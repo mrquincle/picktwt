@@ -15,7 +15,7 @@
 	<div class="container centered">
 		<h1>Url to be used on Twitter or Facebook</h1>
 
-		<p id='clipboard0'>https://picktwt.herokuapp.com/query?url=<%= query.url %>&image_url=<%= query.image_url %>&title=<%= query.title %>&image_alt=<%= query.image_alt %>&description=<%= query.description %></p>
+		<p id='clipboard0'><%= query.link %></p>
 
 		<button type="button" id='copy_button'>Copy to clipboard</button>
 
@@ -46,7 +46,7 @@
 			copy_button.innerHTML = 'Copied to clipboard';
 		}
 		copy_button.addEventListener('copy', function (e) {
-			let text = encodeURI(document.getElementById('clipboard0').innerHTML);
+			let text = document.getElementById('clipboard0').innerHTML;
 			e.preventDefault();
 			if (e.clipboardData) {
 				e.clipboardData.setData('text/plain', text);
