@@ -16,7 +16,8 @@
 		<h1>Url to be used on Twitter or Facebook</h1>
 
 		<p>
-		<a href="<%= query.link %>" id='clipboard0'><%= query.link %></a>
+		<span id='clipboard0'><%= query.link %></span>
+		<a href="<%= query.link %>" id='clipboard1'>(link)</a>
 		</p>
 
 		<button type="button" id='copy_button'>Copy to clipboard</button>
@@ -37,7 +38,7 @@
 		</div>
 	</div>
 	<script language="javascript">
-		let copy_button = document.getElementById('copy_button'); 
+		var copy_button = document.getElementById('copy_button'); 
 
 		copy_button.onclick = function () {
 			console.log("Clicked button");
@@ -48,7 +49,9 @@
 			copy_button.innerHTML = 'Copied to clipboard';
 		}
 		copy_button.addEventListener('copy', function (e) {
-			let text = document.getElementById('clipboard0').innerHTML;
+//			var text = document.getElementById('clipboard0').innerHTML;
+			var text = "<%- query.link %>";
+			console.log("<%- query.link %>");
 			e.preventDefault();
 			if (e.clipboardData) {
 				e.clipboardData.setData('text/plain', text);
