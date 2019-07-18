@@ -2,7 +2,9 @@
 
 A utility that shows a picture in a social media card even if the original website does not have social media card information embedded. It does this as an URL redirector. The end-user will be redirected to the original website. The twitter or facebook bot will instead see the intermediate website with the social card information and won't follow the redirect.
 
-![Screenshot Picktwt web application](doc/picktwt screenshot.png)
+<p align="center">
+  <img src="https://github.com/mrquincle/picktwt/raw/master/doc/picktwt screenshot.png"/>
+</p>
 
 # Website
 
