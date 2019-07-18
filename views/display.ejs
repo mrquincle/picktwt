@@ -22,6 +22,13 @@
 
 		<button type="button" id='copy_button'>Copy to clipboard</button>
 
+		<h2>Note!</h2>
+		<p>
+		The copy action through clicking on the button does not work in every browser. In that case manually copy
+		the above link. If the link is very large, consider to use an URL shortener for the <strong>image</strong>. Note, that a
+		social media site like Facebook or Twitter might prohibit to use an URL shortener for the final link though!
+		</p>
+
 		<h2>Target</h2>
 		<p>It will automatically redirect to <a href="<%= query.url %>"><%= query.url %></a>.</p>
 
@@ -36,6 +43,14 @@
 				</p>
 			</div>
 		</div>
+		<p>
+		If there is no picture shown. Go back and check if the URL to the picture is actually a proper URL, starting
+		with http or https. To shorten the link, throw the URL first through a common URL shortener.
+		</p>
+		<p>
+		Test the result with the <a href="https://cards-dev.twitter.com/validator">Twitter validator</a> or the
+		<a href="https://developers.facebook.com/tools/debug/sharing/">Facebook sharing debugger</a>.
+		</p>
 	</div>
 	<script language="javascript">
 		var copy_button = document.getElementById('copy_button'); 
