@@ -25,7 +25,13 @@
 		<h2>Note!</h2>
 		<p>
 		The copy action through clicking on the button does not work in every browser. In that case manually copy
-		the above link. If the link is very large, consider to use an URL shortener for the <strong>image</strong>. Note, that a
+		the above link. 
+		</p>
+		<p>
+		If the link is very large, consider to use an URL shortener for the <strong>image</strong>. 
+		</p>
+		<p>
+		Note, that a
 		social media site like Facebook or Twitter might prohibit to use an URL shortener for the final link though!
 		</p>
 
@@ -57,14 +63,27 @@
 
 		copy_button.onclick = function () {
 			console.log("Clicked button");
+			const ele = document.createElement('textarea');
+			var text = "<%- query.link %>";
+			ele.value = text;
+			ele.setAttribute('readonly', true)
+			ele.style.position = 'absolute';
+			ele.style.padding = 0;
+			ele.style.background = 'transparent';
+			ele.style.outline = 'none';
+			ele.style.left = '-100%';
+			document.body.appendChild(ele);
+			ele.select();
 			document.execCommand('copy');
+			console.log("Copy", text);
+			document.body.removeChild(ele);
 			if (!copy_button.classList.contains('clicked')) {
 				copy_button.classList.add('clicked');
 			};
 			copy_button.innerHTML = 'Copied to clipboard';
 		}
+/*
 		copy_button.addEventListener('copy', function (e) {
-//			var text = document.getElementById('clipboard0').innerHTML;
 			var text = "<%- query.link %>";
 			console.log("<%- query.link %>");
 			e.preventDefault();
@@ -74,6 +93,7 @@
 				window.clipboardData.setData('Text', text);
 			}
 		});
+*/
 	</script>
 
 	<footer>
